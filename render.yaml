@@ -1,0 +1,17 @@
+# Render Blueprint: New > Blueprint > pick this repo.
+# Free plan note: the disk is not persistent, so quests and uploads reset when the service restarts.
+services:
+  - type: web
+    name: syllabuddy
+    runtime: python
+    plan: free
+    buildCommand: pip install uv && uv sync --frozen --no-dev
+    startCommand: uv run --no-sync uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.8
+      # Atlas needs a hosted AI on a server. A free Gemini key works (https://aistudio.google.com/apikey);
+      # Render asks for the value when the Blueprint is created. Leave it empty to run in offline mode.
+      - key: GEMINI_API_KEY
+        sync: false

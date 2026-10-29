@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Syllabuddy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Silkscreen&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'><rect width='8' height='8' fill='%231f2a44'/><rect x='2' y='2' width='4' height='4' fill='%23efe6d2'/></svg>">
+  <link rel="stylesheet" href="app.css?v={{v}}">
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem("sq-theme") || "ink"; } catch {}</script>
+</head>
+<body>
+  <div class="monitor">
+    <div class="screen"><div class="screen-inner">
+      <header class="topbar">
+        <button class="brand px" data-go="home" title="Go to Today"><b>SYLLA</b>BUDDY</button>
+        <button class="chip px" id="llm-chip" data-act="toggle-ai" style="background:none;cursor:pointer"><span class="dot"></span><span></span></button>
+        <nav class="nav" id="nav" aria-label="Sections"></nav>
+        <button class="sound-btn" id="sound-btn" aria-label="Toggle sound"></button>
+      </header>
+      <main id="view"></main>
+    </div></div>
+    <div class="monitor-foot">
+      <div class="vent"></div>
+      <div class="px muted" style="font-size:12px" id="clock"></div>
+      <div class="power"></div>
+    </div>
+  </div>
+  <div id="focus-dock" class="focus-dock" hidden></div>
+  <div id="modal-root"></div>
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <script src="sfx.js?v={{v}}"></script>
+  <script src="app.js?v={{v}}"></script>
+</body>
+</html>
